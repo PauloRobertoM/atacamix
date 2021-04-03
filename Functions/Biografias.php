@@ -14,25 +14,25 @@ class Biografias {
    public function biografias_post_type() {
 
       $labels = array(
-         'name'                => _x( 'Biografia', 'Post Type General Name', 'text_domain' ),
-         'singular_name'       => _x( 'Biografia', 'Post Type Singular Name', 'text_domain' ),
-         'menu_name'           => __( 'Biografia', 'text_domain' ),
-         'name_admin_bar'      => __( 'Biografia', 'text_domain' ),
-         'parent_item_colon'   => __( 'Biografia pai:', 'text_domain' ),
-         'all_items'           => __( 'Biografia', 'text_domain' ),
-         'add_new_item'        => __( 'Adicionar nova biografia', 'text_domain' ),
+         'name'                => _x( 'Quem Somos', 'Post Type General Name', 'text_domain' ),
+         'singular_name'       => _x( 'Quem Somos', 'Post Type Singular Name', 'text_domain' ),
+         'menu_name'           => __( 'Quem Somos', 'text_domain' ),
+         'name_admin_bar'      => __( 'Quem Somos', 'text_domain' ),
+         'parent_item_colon'   => __( 'Quem Somos pai:', 'text_domain' ),
+         'all_items'           => __( 'Quem Somos', 'text_domain' ),
+         'add_new_item'        => __( 'Adicionar nova Quem Somos', 'text_domain' ),
          'add_new'             => __( 'Adicionar nova', 'text_domain' ),
-         'new_item'            => __( 'Nova biografia', 'text_domain' ),
-         'edit_item'           => __( 'Ediar biografia', 'text_domain' ),
-         'update_item'         => __( 'Atualizar biografia', 'text_domain' ),
-         'view_item'           => __( 'Ver biografia', 'text_domain' ),
-         'search_items'        => __( 'Procurar biografia', 'text_domain' ),
+         'new_item'            => __( 'Nova Quem Somos', 'text_domain' ),
+         'edit_item'           => __( 'Ediar Quem Somos', 'text_domain' ),
+         'update_item'         => __( 'Atualizar Quem Somos', 'text_domain' ),
+         'view_item'           => __( 'Ver Quem Somos', 'text_domain' ),
+         'search_items'        => __( 'Procurar Quem Somos', 'text_domain' ),
          'not_found'           => __( 'Não encontrado', 'text_domain' ),
          'not_found_in_trash'  => __( 'Não encontrado na lixeira', 'text_domain' ),
       );
       $args = array(
-         'label'               => __( 'biografias', 'text_domain' ),
-         'description'         => __( 'Cadastro de biografia', 'text_domain' ),
+         'label'               => __( 'Quem Somos', 'text_domain' ),
+         'description'         => __( 'Cadastro de Quem Somos', 'text_domain' ),
          'labels'              => $labels,
          'supports'            => array( 'title', 'editor', ),
          'taxonomies'          => array( ),
@@ -59,7 +59,7 @@ class Biografias {
       $prefix = 'biografias_';
       $meta_boxes[] = array(
          'id'         => "{$prefix}foto",
-         'title'      => 'Foto da Biografia',
+         'title'      => 'Foto Quem Somos - Home',
          'post_types' => array( 'biografias' ),
          'context'    => 'normal',
          'priority'   => 'high',

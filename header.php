@@ -57,7 +57,7 @@
         <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css' type='text/css' />
         <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/assets/css/hover-min.css' type='text/css' />
         <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css' type='text/css' />
-        <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/assets/css/style.css?v=4' type='text/css' />
+        <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/assets/css/style.css' type='text/css' />
 
         <?php wp_head(); ?>
     </head>
@@ -66,7 +66,7 @@
         <header>
             <div class="topo hidden-xs">
                 <div class="container">
-                    <h4><a href="https://api.whatsapp.com/send?phone=5541992483040&text=Ol%C3%A1!%20Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20palestrante%20Marcos%20Meier" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> 41 99248.3040</a> <span>- 41 3107.6448 - meierpalestras@gmail.com</span></h4>
+                    <h4><a href="https://wa.me/+5584988880000" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> 84 98888-0000</a> <span>|</span> <a href="tel:+5584988880000" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i> 84 98888-0000</a> <span>|</span> <a href="mailTo:contato@atacamix.com.br" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i> contato@atacamix.com.br</a></h4>
                 </div><!-- containe -->
             </div><!-- topo -->
             <?php get_template_part('components/menu'); ?>

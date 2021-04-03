@@ -10,61 +10,69 @@
             <div class="owl-carousel owl-theme owl-palestra">
                 <?php
                     $args = array(
-                        'posts_per_page' => 20,
-                        'post_type'      => 'categorias',
+                        'posts_per_page' => 10,
+                        'post_type'      => 'ofertas',
                     );
-                    $categorias = get_posts($args);
+                    $ofertas = get_posts($args);
                 ?>
-                <?php foreach ($categorias as $categoria) : ?>
-                    <?php $cat_categoria = $categoria->categorias_categoria; ?>
-                    <?php $tit_categoria = $categoria->post_title; ?>
-                    <?php $subtit_categoria = $categoria->categorias_subtitulo; ?>
-                    <?php $cor = $categoria->categorias_cor; ?>
+                <?php foreach ($ofertas as $oferta) : ?>
                     <div class="item">
                         <?php
-                            $categorias = rwmb_meta('categorias_foto', 'type=plupload_image', $categoria->ID);
-                            foreach ( $categorias as $categoria ) {
-                                echo "<img src='{$categoria['url']}' alt='{$categoria['alt']}' />";
+                            $pdfs = rwmb_meta('ofertas_pdf', 'type=file', $oferta->ID);
+                            $img_ofertas = rwmb_meta('ofertas_foto', 'type=plupload_image', $oferta->ID);
+                            foreach ( $pdfs as $pdf ) {
+                                echo "<a href='{$pdf['url']}' target='_blank'>";
+                                    foreach ( $img_ofertas as $img_oferta ) {
+                                        echo "<img src='{$img_oferta['url']}' alt='{$img_oferta['alt']}' />";
+                                    }
+                                echo "</a>";
                             }
                         ?>
-                        <div class="conteudo" style="background: <?= $cor ?>;">
-                            <h2><?= $tit_categoria ?></h2>
-                            <p><?= $subtit_categoria ?></p>
-                            <a href="<?php echo site_url('palestra?cat='); ?><?= $cat_categoria ?>"><i class="fa fa-plus-circle" aria-hidden="true"></i> SAIBA MAIS</a>
-                        </div><!-- conteudo -->
                     </div><!-- item -->
                 <?php endforeach; ?>
             </div><!-- owl-carousel -->
         </div><!-- container -->
-    </section><!-- categorias -->
+    </section><!-- ofertas -->
 
     <section class="depoimentos">
         <div class="container">
-            <h1 class="text-center">DEPOIMENTOS</h1>
+            <h1 class="text-center">NOTÍCIAS</h1>
             <div class="owl-carousel owl-theme owl-depoimento">
                 <?php
-                    $args = array(
-                        'posts_per_page' => 20,
-                        'post_type'      => 'depoimentos',
+                    $args = array (
+                        'post_status'    => 'publish',
+                        'pagination'     => true,
+                        'posts_per_page' => '10',
                     );
-                    $depoimentos = get_posts($args);
+                    $posts = new WP_Query( $args );
                 ?>
-                <?php foreach ($depoimentos as $depoimento) : ?>
-                    <?php $tit_depoimento = $depoimento->post_title; ?>
-                    <?php $corpo_depoimento = $depoimento->post_content; ?>
-                    <div class="item">
-                        <h4 class="text-center">"<?= $corpo_depoimento ?>"</h4>
-                        <p class="text-center"><?= $tit_depoimento ?></p>
-                    </div><!-- item -->
-                <?php endforeach; ?>
+                <?php if ( $posts->have_posts() ) : ?>
+                    <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+                        <div class="item">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail(''); ?>
+                                <?php endif; ?>
+                                <h4 class="text-center"><?php the_title(); ?></h4>
+                            </a>
+                            <a href="<?php the_permalink(); ?>" class="btn-geral"><i class="fa fa-plus-circle" aria-hidden="true"></i> LEIA MAIS</a>
+                        </div><!-- item -->
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div><!-- owl-carousel -->
         </div><!-- container -->
     </section><!-- depoimentos -->
 
     <section class="instagram">
         <div class="container">
-            <h1 class="text-center">@ATACAMIX</h1>
-            
+            <h1 class="text-center"><a href="https://www.instagram.com/atacamixoficial/" target="_blank">@ATACAMIXOFICIAL</a></h1>
+            <div class="itens">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sobre2.jpg">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insta1.jpg">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insta2.jpg">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sobre2.jpg">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insta2.jpg">
+            </div><!-- itens -->
         </div><!-- container -->
     </section><!-- instagram -->
 

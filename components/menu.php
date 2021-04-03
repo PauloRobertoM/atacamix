@@ -15,28 +15,18 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo site_url('/'); ?>">HOME</a></li>
-                        <li><a href="<?php echo site_url('marcos-meier'); ?>">MARCOS MEIER</a></li>
+                        <li><a href="<?php echo site_url('atacamix'); ?>">ATACAMIX</a></li>
+                        <li><a href="#">OFERTAS</a></li>
+                        <li><a href="<?php echo site_url('blog'); ?>">NOTÍCIAS</a></li>
                         <li>
-                            <a href="#">OFERTAS</a>
+                            <a href="#">CONTATO</a>
                             <ul class="sub-menu">
-                                <?php
-                                    $args = array(
-                                        'posts_per_page' => 20,
-                                        'post_type'      => 'categorias',
-                                    );
-                                    $categorias = get_posts($args);
-                                ?>
-                                <?php foreach ($categorias as $categoria) : ?>
-                                    <?php $cat_categoria = $categoria->categorias_categoria; ?>
-                                    <?php $tit_categoria = $categoria->post_title; ?>
-                                    <li><a href="<?php echo site_url('palestra?cat='); ?><?= $cat_categoria ?>"><?= $tit_categoria ?></a></li>
-                                <?php endforeach; ?>
+                                <li><a href="">FALE CONOSCO</a></li>
+                                <li><a href="<?php echo site_url('trabalhe'); ?>">TRABALHE CONOSCO</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?php echo site_url('blog'); ?>">BLOG</a></li>
-                        <li><a href="<?php echo site_url('contrate'); ?>">CONTRATE</a></li>
                         <li class="redes-sociais">
-                            <a href="https://www.instagram.com/MARCOSMEIEROFICIAL/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/atacamixoficial/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         </li><!-- redes-sociais -->
                     </ul><!-- .nav -->
                 </div><!-- .navbar-collapse -->
